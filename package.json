@@ -1,0 +1,28 @@
+{
+  "name": "jest-pg",
+  "version": "1.1.0",
+  "description": "create postgres db for jest globalSetup and delete db after test run",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zodiac1214/jest-pg.git"
+  },
+  "keywords": [
+    "jest",
+    "postgres",
+    "database",
+    "initialization"
+  ],
+  "author": "Di Zou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zodiac1214/jest-pg/issues"
+  },
+  "homepage": "https://github.com/zodiac1214/jest-pg#readme",
+  "dependencies": {
+    "pg": "7.12.1"
+  }
+}
