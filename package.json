@@ -1,6 +1,6 @@
 {
   "name": "jest-pg",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "create postgres db for jest globalSetup and delete db after test run",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,7 @@
   "dependencies": {
     "pg": "7.12.1",
     "dotenv": "8.2.0",
-    "find-file-up": "2.0.1"
+    "find-file-up": "2.0.1",
+    "uuid": "7.0.3"
   }
 }

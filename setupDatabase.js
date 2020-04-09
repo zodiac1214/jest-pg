@@ -3,9 +3,10 @@ const findFileUp = require("find-file-up");
 const envFilePath = findFileUp.sync(".env");
 dotenv.config({ path: envFilePath });
 const { Client } = require("pg");
+const uuid = require("uuid");
 
 module.exports = async () => {
-  const dbName = Date.now();
+  const dbName = uuid.v4();
   process.env.TYPEORM_DATABASE = dbName;
   console.log(`Setup up Database - ${dbName}`);
   const client = new Client({

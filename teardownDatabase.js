@@ -3,7 +3,7 @@ dotenv.config();
 const { Client } = require("pg");
 
 module.exports = async () => {
-  const dbName = process.env.TYPEORM_DATABASE ? process.env.TYPEORM_DATABASE : Date.now();
+  const dbName = process.env.TYPEORM_DATABASE
   process.env.TYPEORM_DATABASE = dbName;
   console.log(`Setup up Database - ${dbName}`);
   const client = new Client({
