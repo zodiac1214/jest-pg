@@ -6,7 +6,7 @@ const { Client } = require("pg");
 const uuid = require("uuid");
 const spawn = require('await-spawn')
 
-module.exports = async () => {
+module.exports = async (param) => {
   const dbName = uuid.v4();
   process.env.TYPEORM_DATABASE = dbName;
   console.log(`Setup up Database - ${dbName}`);
@@ -21,8 +21,8 @@ module.exports = async () => {
   await client.connect();
   await client.query(`CREATE DATABASE "${dbName}";`);
   await client.end();
-  process.env.TYPEORM_MIGRATIONS=`${process.env.PWD}/src/migrations/**/*.ts`
-  process.env.TYPEORM_ENTITIES=`${process.env.PWD}/src/entities/**/*.ts`
+  process.env.TYPEORM_MIGRATIONS=`${param.rootDir}/src/migrations/**/*.ts`
+  process.env.TYPEORM_ENTITIES=`${param.rootDir}/src/entities/**/*.ts`
   try {
     const migrationOutput = await spawn("yarn", ["run", "typeorm", "migration:run"]);
     console.log(migrationOutput.toString())
