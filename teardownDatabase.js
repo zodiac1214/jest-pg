@@ -5,7 +5,7 @@ const { Client } = require("pg");
 module.exports = async () => {
   const dbName = process.env.TYPEORM_DATABASE
   process.env.TYPEORM_DATABASE = dbName;
-  console.log(`Setup up Database - ${dbName}`);
+  console.log(`Tear Down Database - ${dbName}`);
   const client = new Client({
     host: process.env.TYPEORM_HOST,
     port: process.env.TYPEORM_PORT,
