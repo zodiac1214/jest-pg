@@ -1,6 +1,6 @@
 {
   "name": "jest-pg",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "create postgres db for jest globalSetup and delete db after test run",
   "main": "index.js",
   "scripts": {

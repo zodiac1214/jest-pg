@@ -9,7 +9,7 @@ const spawn = require('await-spawn')
 module.exports = async (param) => {
   const dbName = uuid.v4();
   process.env.TYPEORM_DATABASE = dbName;
-  console.log(`Setup up Database - ${dbName}`);
+  console.log(`Setup Database - ${dbName}`);
   const client = new Client({
     host: process.env.TYPEORM_HOST,
     port: process.env.TYPEORM_PORT,
